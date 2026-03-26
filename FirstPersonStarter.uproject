@@ -12,7 +12,6 @@
 				"Engine"
 			]
 		},
-
 		{
 			"Name": "BlueprintSubsystemFramework",
 			"Type": "Runtime",
@@ -27,5 +26,10 @@
 				"Editor"
 			]
 		}
+	],
+	"TargetPlatforms": [
+		"Windows",
+		"Mac",
+		"Linux"
 	]
 }
