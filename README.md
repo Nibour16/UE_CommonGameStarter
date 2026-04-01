@@ -1,5 +1,13 @@
-A starter for most of Unreal games, with function, macro libraries that helps for common cases.
+A starter for 3D games in Unreal Engine
 
-You can create a subsystem through blueprint with this starter.
+Features
+- A starting Player BP
+- Blueprintable Subsystem that you can create a custom subsystem through Blueprint without needing to code with C++
+- Starting Function and Macro Libraries
 
-There is a player BP that you are free to define. 
+License & Credits
+- Programming
+	Copyright(c) Nibour16
+	License under the GNU General Public License v3.0
+
+- Game Engine: Unreal Engine 5.7
