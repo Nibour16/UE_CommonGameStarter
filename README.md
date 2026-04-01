@@ -7,7 +7,7 @@ Features
 
 License & Credits
 - Programming
-	- Copyright(c) Nibour16
+	- Copyright(c) 2026 Nibour16
 	- License under the GNU General Public License v3.0
 
 - Game Engine: Unreal Engine 5.7
