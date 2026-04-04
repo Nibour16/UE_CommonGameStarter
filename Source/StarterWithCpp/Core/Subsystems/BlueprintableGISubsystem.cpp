@@ -13,3 +13,13 @@ void UBlueprintableGISubsystem::Deinitialize()
 
 	Super::Deinitialize();
 }
+
+void UBlueprintableGISubsystem::OnInitialize_Implementation()
+{
+	
+}
+
+void UBlueprintableGISubsystem::OnDeinitialize_Implementation()
+{
+
+}

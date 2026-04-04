@@ -3,11 +3,11 @@
 #include "Engine/World.h"
 #include "Engine/GameInstance.h"
 
-#include "Subsystems/GameInstanceSubsystem.h"
+#include "Subsystems/BlueprintableGISubsystem.h"
 
 // Define cached datas
 TMap< TWeakObjectPtr<UGameInstance>, 
-	TMap<UClass*, TWeakObjectPtr<UGameInstanceSubsystem>> > 
+	TMap<UClass*, TWeakObjectPtr<UBlueprintableGISubsystem>> >
 	FSubsystemRegistry::CachedGI;	// Cached Game Instance Subsystem Data
 
 // Basic Data Cache Logic
@@ -52,7 +52,7 @@ bool FSubsystemRegistry::ResolveSubsystemContext(
 	if (!WorldContextObject || !Class) return false;
 
 	// Check if the class is the correct child
-	if (!Class->IsChildOf(UGameInstanceSubsystem::StaticClass())) 
+	if (!Class->IsChildOf(UBlueprintableGISubsystem::StaticClass()))
 		return false;
 
 	// Check if the world is exist
@@ -68,7 +68,7 @@ bool FSubsystemRegistry::ResolveSubsystemContext(
 }
 
 // Get Game Instance Subsystem Logic
-UGameInstanceSubsystem* FSubsystemRegistry::GetGISubsystem(
+UBlueprintableGISubsystem* FSubsystemRegistry::GetGISubsystem(
 	UObject* WorldContextObject,
 	UClass* Class)
 {
@@ -77,12 +77,13 @@ UGameInstanceSubsystem* FSubsystemRegistry::GetGISubsystem(
 	if (!ResolveSubsystemContext(WorldContextObject, Class, GI))
 		return nullptr;
 
-	return GetCachedSubsystem<UGameInstance, UGameInstanceSubsystem>(
+	return GetCachedSubsystem<UGameInstance, UBlueprintableGISubsystem>(
 		CachedGI,
 		GI,
 		Class,
 		[GI, Class]()
 		{
-			return GI->GetSubsystemBase(Class);
+			return Cast<UBlueprintableGISubsystem>(
+				GI->GetSubsystemBase(Class));
 		});
 }

@@ -2,13 +2,13 @@
 
 #include "CoreMinimal.h"
 
-#include "Subsystems/GameInstanceSubsystem.h"
+#include "Subsystems/BlueprintableGISubsystem.h"
 
-class BLUEPRINTSUBSYSTEMFRAMEWORK_API FSubsystemRegistry
+class STARTERWITHCPP_API FSubsystemRegistry
 {
 public:
 	// Get Game Instance Subsystem
-	static UGameInstanceSubsystem* GetGISubsystem(UObject* WorldContextObject, UClass* Class);
+	static UBlueprintableGISubsystem* GetGISubsystem(UObject* WorldContextObject, UClass* Class);
 
 private:
 	// Base logic that gets cached subsystem data
@@ -28,6 +28,6 @@ private:
 	// Game Instance Subsystem Cached Data
 	static TMap<
 		TWeakObjectPtr<UGameInstance>, 
-		TMap< UClass*, TWeakObjectPtr<UGameInstanceSubsystem> >
+		TMap< UClass*, TWeakObjectPtr<UBlueprintableGISubsystem> >
 	> CachedGI;
 };

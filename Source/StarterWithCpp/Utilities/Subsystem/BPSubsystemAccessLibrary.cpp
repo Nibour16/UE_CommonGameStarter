@@ -3,11 +3,11 @@
 #include "Engine/World.h"
 #include "Engine/GameInstance.h"
 
-#include "SubsystemRegistry.h"
+#include "Subsystem/SubsystemRegistry.h"
 
-UGameInstanceSubsystem* UBPSubsystemAccessLibrary::GetGameInstanceSubsystem(
+UBlueprintableGISubsystem* UBPSubsystemAccessLibrary::GetBlueprintableGISubsystem(
     UObject* WorldContextObject,
-    TSubclassOf<UGameInstanceSubsystem> Class)
+    TSubclassOf<UBlueprintableGISubsystem> Class)
 {
     return FSubsystemRegistry::GetGISubsystem( WorldContextObject, Class.Get() );
 }

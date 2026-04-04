@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 
-#include "Subsystems/GameInstanceSubsystem.h"
+#include "Subsystems/BlueprintableGISubsystem.h"
 
 #include "BPSubsystemAccessLibrary.generated.h"
 
@@ -17,6 +17,6 @@ public:
 	UFUNCTION(
 		BlueprintPure, Category="Subsystem", 
 		meta = (WorldContext="WorldContextObject", DeterminesOutputType="Class"))
-	static UGameInstanceSubsystem* GetGameInstanceSubsystem(
-		UObject* WorldContextObject, TSubclassOf<UGameInstanceSubsystem> Class);
+	static UBlueprintableGISubsystem* GetBlueprintableGISubsystem(
+		UObject* WorldContextObject, TSubclassOf<UBlueprintableGISubsystem> Class);
 };

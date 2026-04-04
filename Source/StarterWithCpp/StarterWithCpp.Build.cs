@@ -10,8 +10,7 @@ public class StarterWithCpp : ModuleRules
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
 		PublicDependencyModuleNames.AddRange(new string[] 
-			{ "Core", "CoreUObject", "Engine", "InputCore",
-			  "BlueprintSubsystemFramework"});
+			{ "Core", "CoreUObject", "Engine", "InputCore",});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
@@ -25,6 +24,7 @@ public class StarterWithCpp : ModuleRules
 
         PublicIncludePaths.AddRange(new string[]
         {
+            Path.Combine(ModuleDirectory, "Core"),
             Path.Combine(ModuleDirectory, "Utilities"),
         });
     }

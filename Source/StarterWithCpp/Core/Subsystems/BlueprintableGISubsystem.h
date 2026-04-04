@@ -6,7 +6,7 @@
 
 #define GI_SUBSYSTEM_CATEGORY "Game Instance Subsystem"
 
-UCLASS(BlueprintType, Blueprintable)
+UCLASS(Abstract, Blueprintable)
 class STARTERWITHCPP_API UBlueprintableGISubsystem : public UGameInstanceSubsystem
 {
 	GENERATED_BODY()
@@ -17,14 +17,16 @@ public:
 
 protected:
 	UFUNCTION(
-		BlueprintImplementableEvent, 
+		BlueprintNativeEvent, 
 		Category = GI_SUBSYSTEM_CATEGORY,
 		meta = (DisplayName = "Initialized"))
 	void OnInitialize();
+	virtual void OnInitialize_Implementation();
 
 	UFUNCTION(
-		BlueprintImplementableEvent,
+		BlueprintNativeEvent,
 		Category = GI_SUBSYSTEM_CATEGORY,
 		meta = (DisplayName = "Deinitialization"))
 	void OnDeinitialize();
+	virtual void OnDeinitialize_Implementation();
 };
