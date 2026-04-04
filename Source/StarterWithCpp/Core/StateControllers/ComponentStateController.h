@@ -25,7 +25,7 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 protected:
-	UPROPERTY(EditAnywhere, Category = "State Machine")
+	UPROPERTY(EditAnywhere, Category = "General Setting")
 	TArray<TSubclassOf<UBaseState>> States;
 
 private:
