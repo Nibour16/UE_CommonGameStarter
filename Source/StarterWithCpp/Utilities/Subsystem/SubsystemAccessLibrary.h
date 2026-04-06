@@ -5,10 +5,10 @@
 
 #include "Subsystems/BlueprintableGISubsystem.h"
 
-#include "BPSubsystemAccessLibrary.generated.h"
+#include "SubsystemAccessLibrary.generated.h"
 
 UCLASS()
-class STARTERWITHCPP_API UBPSubsystemAccessLibrary : public UBlueprintFunctionLibrary
+class STARTERWITHCPP_API USubsystemAccessLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 

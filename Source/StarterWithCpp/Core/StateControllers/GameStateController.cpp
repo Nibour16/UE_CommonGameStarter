@@ -27,3 +27,8 @@ void AGameStateController::Tick(float DeltaTime)
 		StateMachine->Tick(DeltaTime);
 }
 
+void AGameStateController::ChangeState(TSubclassOf<UBaseState> InState)
+{
+	if (StateMachine)
+		StateMachine->SetState(InState);
+}

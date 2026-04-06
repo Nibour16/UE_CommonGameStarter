@@ -1,11 +1,11 @@
-#include "BPSubsystemAccessLibrary.h"
+#include "SubsystemAccessLibrary.h"
 
 #include "Engine/World.h"
 #include "Engine/GameInstance.h"
 
 #include "Subsystem/SubsystemRegistry.h"
 
-UBlueprintableGISubsystem* UBPSubsystemAccessLibrary::GetBlueprintableGISubsystem(
+UBlueprintableGISubsystem* USubsystemAccessLibrary::GetBlueprintableGISubsystem(
     UObject* WorldContextObject,
     TSubclassOf<UBlueprintableGISubsystem> Class)
 {

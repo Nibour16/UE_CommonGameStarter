@@ -23,8 +23,11 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UFUNCTION(BlueprintCallable, Category = "State Controller")
+	void ChangeState(TSubclassOf<UBaseState> InState);
+
 protected:
-	UPROPERTY(EditAnywhere, Category = "General Setting")
+	UPROPERTY(EditAnywhere, Category = "General Setting", meta = (AllowAbstract = false))
 	TArray<TSubclassOf<UBaseState>> States;
 
 private:
