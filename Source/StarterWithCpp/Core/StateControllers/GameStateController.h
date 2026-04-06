@@ -19,6 +19,10 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
+	UFUNCTION(BlueprintImplementableEvent, Category = "State Controller", 
+		meta = (DisplayName = "Before State Construction"))
+	void BeforeStateConstruction();
+
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

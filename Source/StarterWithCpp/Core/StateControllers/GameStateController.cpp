@@ -14,6 +14,8 @@ void AGameStateController::BeginPlay()
 
 	StateMachine->Initialize(this);
 
+	BeforeStateConstruction();
+
 	StateMachine->RegisterStates(States, this);
 
 	StateMachine->SetDefaultState();
