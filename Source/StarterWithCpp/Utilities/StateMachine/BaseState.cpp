@@ -5,5 +5,7 @@ void UBaseState::Initialize(UObject* InOwner, UStateMachine* InStateMachine)
 {
 	Owner = InOwner;
 	StateMachine = InStateMachine;
+
+	OnInitialize();
 }
 

@@ -24,16 +24,12 @@ public:
 	void ExitState();
 
 protected:
-	UPROPERTY()
+	UPROPERTY(BlueprintReadOnly, Category = "State")
 	UObject* Owner;
 
 	UPROPERTY()
 	UStateMachine* StateMachine;
 
-public:
-	template<typename T>
-	T* GetOwnerAs() const
-	{
-		return Cast<T>(Owner);
-	}
+	UFUNCTION(BlueprintImplementableEvent, Category = "State")
+	void OnInitialize();
 };
