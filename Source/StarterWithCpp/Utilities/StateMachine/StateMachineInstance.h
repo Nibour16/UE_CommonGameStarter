@@ -23,9 +23,11 @@ public:
 	void SetState(TSubclassOf<UBaseState> NewStateClass);
 	void SetDefaultState();
 
-	UStateMachine* GetStateMachine() const { return StateMachine; }
+	UBaseState* GetCurrentState();
 
 private:
+	UStateMachine* GetStateMachine() const { return StateMachine; }
+
 	UPROPERTY()
 	UStateMachine* StateMachine;
 

@@ -35,3 +35,10 @@ void UComponentStateController::ChangeState(TSubclassOf<UBaseState> InState)
 		StateMachine->SetState(InState);
 }
 
+UBaseState* UComponentStateController::GetCurrentState()
+{
+	if (StateMachine)
+		return StateMachine->GetCurrentState();
+
+	return nullptr;
+}

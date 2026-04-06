@@ -66,3 +66,11 @@ void UStateMachineInstance::SetDefaultState()
 	if (!bIsValidStateClasses)
 		UE_LOG(LogTemp, Warning, TEXT("No valid default state found!"));
 }
+
+UBaseState* UStateMachineInstance::GetCurrentState()
+{
+	if (StateMachine)
+		return StateMachine->GetCurrentState();
+
+	return nullptr;
+}

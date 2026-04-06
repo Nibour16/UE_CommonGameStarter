@@ -34,3 +34,11 @@ void AGameStateController::ChangeState(TSubclassOf<UBaseState> InState)
 	if (StateMachine)
 		StateMachine->SetState(InState);
 }
+
+UBaseState* AGameStateController::GetCurrentState()
+{
+	if (StateMachine)
+		return StateMachine->GetCurrentState();
+
+	return nullptr;
+}

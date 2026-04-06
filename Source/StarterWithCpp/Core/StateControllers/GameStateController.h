@@ -30,6 +30,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "State Controller")
 	void ChangeState(TSubclassOf<UBaseState> InState);
 
+	UFUNCTION(BlueprintPure, Category = "State Controller", meta = (DisplayName = "Get Current State"))
+	UBaseState* GetCurrentState();
+
 protected:
 	UPROPERTY(EditAnywhere, Category = "General Setting", meta = (AllowAbstract = false))
 	TArray<TSubclassOf<UBaseState>> States;

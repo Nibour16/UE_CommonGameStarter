@@ -15,10 +15,8 @@ public:
 	void Initialize(UObject* InOwner);
 	void Tick(float DeltaTime);
 
-	UFUNCTION(BlueprintCallable)
 	void SetState(TSubclassOf<UBaseState> NewStateClass);
 
-	UFUNCTION(BlueprintPure)
 	UBaseState* GetCurrentState() const { return CurrentState; }
 
 	void RegisterState(TSubclassOf<UBaseState> StateClass, UBaseState* StateInstance);
