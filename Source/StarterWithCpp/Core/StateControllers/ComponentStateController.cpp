@@ -12,9 +12,9 @@ void UComponentStateController::BeginPlay()
 
 	StateMachine = NewObject<UStateMachineInstance>(this);
 
-	StateMachine->Initialize(GetOwner());
+	StateMachine->Initialize(this);
 
-	StateMachine->RegisterStates(States, GetOwner());
+	StateMachine->RegisterStates(States, this);
 
 	StateMachine->SetDefaultState();
 }
