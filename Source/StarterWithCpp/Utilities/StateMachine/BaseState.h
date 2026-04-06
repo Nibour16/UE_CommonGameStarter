@@ -14,13 +14,13 @@ class STARTERWITHCPP_API UBaseState : public UObject
 public:
 	virtual void Initialize(UObject* InOwner, UStateMachine* InStateMachine);
 
-	UFUNCTION(BlueprintImplementableEvent)
+	UFUNCTION(BlueprintImplementableEvent, Category = "State", meta = (DisplayName = "Enter State"))
 	void EnterState();
 
-	UFUNCTION(BlueprintImplementableEvent)
+	UFUNCTION(BlueprintImplementableEvent, Category = "State", meta = (DisplayName = "Update State"))
 	void UpdateState(float DeltaTime);
 
-	UFUNCTION(BlueprintImplementableEvent)
+	UFUNCTION(BlueprintImplementableEvent, Category = "State", meta = (DisplayName = "Exit State"))
 	void ExitState();
 
 protected:
@@ -30,6 +30,6 @@ protected:
 	UPROPERTY()
 	UStateMachine* StateMachine;
 
-	UFUNCTION(BlueprintImplementableEvent, Category = "State")
+	UFUNCTION(BlueprintImplementableEvent, meta = (DisplayName = "Initialize"))
 	void OnInitialize();
 };
