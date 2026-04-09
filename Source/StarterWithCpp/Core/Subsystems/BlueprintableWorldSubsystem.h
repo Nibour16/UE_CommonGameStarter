@@ -17,13 +17,13 @@ protected:
 	UFUNCTION(
 		BlueprintImplementableEvent,
 		Category = GI_SUBSYSTEM_CATEGORY,
-		meta = (DisplayName = "Initialized"))
+		meta = (DisplayName = "Initialize"))
 	void OnInitialize();
 
 	UFUNCTION(
 		BlueprintImplementableEvent,
 		Category = GI_SUBSYSTEM_CATEGORY,
-		meta = (DisplayName = "Deinitialization"))
+		meta = (DisplayName = "Deinitialize"))
 	void OnDeinitialize();
 
 };
