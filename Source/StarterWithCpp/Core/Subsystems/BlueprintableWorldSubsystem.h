@@ -1,16 +1,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Subsystems/GameInstanceSubsystem.h"
-#include "BlueprintableGISubsystem.generated.h"
-
-#define GI_SUBSYSTEM_CATEGORY "Game Instance Subsystem"
+#include "Subsystems/WorldSubsystem.h"
+#include "BlueprintableWorldSubsystem.generated.h"
 
 UCLASS(Abstract, Blueprintable)
-class STARTERWITHCPP_API UBlueprintableGISubsystem : public UGameInstanceSubsystem
+class STARTERWITHCPP_API UBlueprintableWorldSubsystem : public UWorldSubsystem
 {
 	GENERATED_BODY()
-
+	
 public:
 	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
 	virtual void Deinitialize() override;
@@ -27,4 +25,5 @@ protected:
 		Category = GI_SUBSYSTEM_CATEGORY,
 		meta = (DisplayName = "Deinitialization"))
 	void OnDeinitialize();
+
 };
