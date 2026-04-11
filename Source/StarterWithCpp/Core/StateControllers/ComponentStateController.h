@@ -21,24 +21,17 @@ protected:
 	virtual void BeginPlay() override;
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "State Controller",
-		meta = (DisplayName = "Before State Construction"))
+		meta = (DisplayName = "Construct"))
 	void BeforeStateConstruction();
 
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	UFUNCTION(BlueprintCallable, Category = "State Controller")
-	void ChangeState(TSubclassOf<UBaseState> InState);
-
-	UFUNCTION(BlueprintPure, Category = "State Controller", meta = (DisplayName = "Get Current State"))
-	UBaseState* GetCurrentState();
-
 protected:
 	UPROPERTY(EditAnywhere, Category = "General Setting", meta= (AllowAbstract = false))
 	TArray<TSubclassOf<UBaseState>> States;
 
-private:
-	UPROPERTY()
+	UPROPERTY(BlueprintReadOnly, Category = "State Machine")
 	UStateMachineInstance* StateMachine;
 };

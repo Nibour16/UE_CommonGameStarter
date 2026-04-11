@@ -28,17 +28,3 @@ void AGameStateController::Tick(float DeltaTime)
 	if (StateMachine)
 		StateMachine->Tick(DeltaTime);
 }
-
-void AGameStateController::ChangeState(TSubclassOf<UBaseState> InState)
-{
-	if (StateMachine)
-		StateMachine->SetState(InState);
-}
-
-UBaseState* AGameStateController::GetCurrentState()
-{
-	if (StateMachine)
-		return StateMachine->GetCurrentState();
-
-	return nullptr;
-}

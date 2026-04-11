@@ -27,7 +27,7 @@ protected:
 	UPROPERTY(BlueprintReadOnly, Category = "State")
 	UObject* Owner;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadOnly, Category = "State Machine")
 	UStateMachine* StateMachine;
 
 	UFUNCTION(BlueprintImplementableEvent, meta = (DisplayName = "Initialize"))

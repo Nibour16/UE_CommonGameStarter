@@ -28,17 +28,3 @@ void UComponentStateController::TickComponent(float DeltaTime, ELevelTick TickTy
 	if (StateMachine)
 		StateMachine->Tick(DeltaTime);
 }
-
-void UComponentStateController::ChangeState(TSubclassOf<UBaseState> InState)
-{
-	if (StateMachine)
-		StateMachine->SetState(InState);
-}
-
-UBaseState* UComponentStateController::GetCurrentState()
-{
-	if (StateMachine)
-		return StateMachine->GetCurrentState();
-
-	return nullptr;
-}

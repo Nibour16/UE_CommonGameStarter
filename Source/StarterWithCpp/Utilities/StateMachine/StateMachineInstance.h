@@ -20,9 +20,12 @@ public:
 		const TArray<TSubclassOf<UBaseState>>& InStateClasses,
 		UObject* Owner);
 
-	void SetState(TSubclassOf<UBaseState> NewStateClass);
 	void SetDefaultState();
 
+	UFUNCTION(BlueprintCallable, Category = "State Machine", meta = (DisplayName = "Change State"))
+	void SetState(TSubclassOf<UBaseState> NewStateClass);
+
+	UFUNCTION(BlueprintPure, Category = "State Machine", meta = (DisplayName = "Get Current State"))
 	UBaseState* GetCurrentState();
 
 private:
