@@ -1,9 +1,13 @@
 A starter for 3D games in Unreal Engine
 
-Features
+Main Features
 - A starting Player BP
 - Blueprintable Subsystem that you can create a custom subsystem through Blueprint without needing to code with C++
 - Starting Function and Macro Libraries
+
+Sample Features
+- Ragdoll Death Simulator Actor Component for peoples who are lazy to make death animation
+- Advanced Object Interaction System
 
 License & Credits
 - Programming
