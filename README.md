@@ -3,6 +3,7 @@ A starter for advacned 3D video games in Unreal Engine, mainly for experienced b
 Main Features
 - A starting Player BP
 - Blueprintable Subsystem that you can create a custom subsystem through Blueprint without needing to code with C++
+- State Pattern that includes Component State Controller that its base class is Actor Component, and Game State Controller that its base class is Game State
 - Starting Function and Macro Libraries
 
 Sample Features
