@@ -1,4 +1,4 @@
-A starter for 3D games in Unreal Engine
+A starter for advacned 3D video games in Unreal Engine, mainly for experienced blueprint users
 
 Main Features
 - A starting Player BP
