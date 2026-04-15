@@ -21,6 +21,17 @@ void UComponentStateController::BeginPlay()
 	StateMachine->SetDefaultState();
 }
 
+void UComponentStateController::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+	if (StateMachine)
+	{
+		StateMachine->Shutdown();
+		StateMachine = nullptr;
+	}
+	
+	Super::EndPlay(EndPlayReason);
+}
+
 void UComponentStateController::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);

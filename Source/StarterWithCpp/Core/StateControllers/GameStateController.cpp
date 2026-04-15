@@ -21,6 +21,17 @@ void AGameStateController::BeginPlay()
 	StateMachine->SetDefaultState();
 }
 
+void AGameStateController::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+	if (StateMachine)
+	{
+		StateMachine->Shutdown();
+		StateMachine = nullptr;
+	}
+
+	Super::EndPlay(EndPlayReason);
+}
+
 void AGameStateController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

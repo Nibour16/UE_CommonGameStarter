@@ -28,6 +28,8 @@ public:
 	UFUNCTION(BlueprintPure, Category = "State Machine", meta = (DisplayName = "Get Current State"))
 	UBaseState* GetCurrentState();
 
+	void Shutdown();
+
 private:
 	UStateMachine* GetStateMachine() const { return StateMachine; }
 

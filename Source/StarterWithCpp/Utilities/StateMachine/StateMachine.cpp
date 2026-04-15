@@ -53,3 +53,9 @@ void UStateMachine::RegisterState(TSubclassOf<UBaseState> StateClass, UBaseState
 	if (!StateData.Contains(StateClass))
 		StateData.Add(StateClass, StateInst);
 }
+
+void UStateMachine::ClearStates()
+{
+	StateData.Reset();
+	CurrentState = nullptr;
+}

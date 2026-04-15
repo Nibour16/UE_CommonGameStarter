@@ -22,6 +22,7 @@ public:
 	UBaseState* GetCurrentState() const { return CurrentState; }
 
 	void RegisterState(TSubclassOf<UBaseState> StateClass, UBaseState* StateInstance);
+	void ClearStates();
 
 private:
 	UPROPERTY()

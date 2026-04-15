@@ -74,3 +74,11 @@ UBaseState* UStateMachineInstance::GetCurrentState()
 
 	return nullptr;
 }
+
+void UStateMachineInstance::Shutdown()
+{
+	GetCurrentState()->ExitState();
+
+	if (StateMachine)
+		StateMachine->ClearStates();
+}
