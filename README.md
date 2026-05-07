@@ -49,7 +49,7 @@ Before opening the project, make sure you have:
    - **Generate Visual Studio project files** (Windows)
    - or equivalent project generation for your platform.
 
-4. wait until the generation is finished.
+4. Wait until the generation is finished.
 
 5. Open the project, and the engine may ask you to build, choose Yes.
 
@@ -78,7 +78,7 @@ Before opening the project, make sure you have:
 
 ---
 
-# License & Credits
+# 📄 License & Credits
 
 ## Programming
 
