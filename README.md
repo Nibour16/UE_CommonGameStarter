@@ -56,8 +56,8 @@ Before opening the project, make sure you have:
 # 📝 Notes
 
 > [!IMPORTANT]
-> This project uses both blueprint and C++.
-> You must generate project file before opening the project for the first time.
+> This project uses both blueprint and C++,
+> therefore you must generate project file before opening the project for the first time.
 
 > [!NOTE]
 > Recommended for users already familiar with advanced Blueprint workflows.
