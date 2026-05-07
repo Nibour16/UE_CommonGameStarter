@@ -33,9 +33,7 @@ A starter for advanced 3D video games in Unreal Engine, mainly for experienced b
 Before opening the project, make sure you have:
 
 - Unreal Engine 5.7 installed
-- A C++ development environment configured for Unreal Engine
-	- Visual Studio 2022 (Windows)
-	- Xcode (macOS)
+- Visual Studio 2022 for C++ development
 
 ---
 
@@ -45,9 +43,7 @@ Before opening the project, make sure you have:
 
 2. Open file manager to locate this project.
 
-3. Right click the .uproject file, select:
-   - **Generate Visual Studio project files** (Windows)
-   - or equivalent project generation for your platform.
+3. Right click the .uproject file, select: **Generate Visual Studio project files**
 
 4. Wait until the generation is finished.
 
