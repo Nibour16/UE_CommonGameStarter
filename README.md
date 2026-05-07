@@ -74,6 +74,16 @@ Before opening the project, make sure you have:
 
 ---
 
+# 🤝 Contributing
+
+Contributions, suggestions, and improvements are welcome.
+
+Please fork the repository and submit a pull request for review.
+
+Only repository maintainers and approved contributors can directly modify the main repository.
+
+---
+
 # 📄 License & Credits
 
 ## Programming
