@@ -20,6 +20,7 @@ A starter for advanced 3D video games in Unreal Engine, mainly for experienced b
 ## 🎮 Sample Features
 
 | Feature | Description |
+|---|---|
 | Ragdoll Death Simulator | Ragdoll death effects without needing of animations |
 | Advanced Object Interaction System | Flexible interaction between gameplay objects in the game world |
 
