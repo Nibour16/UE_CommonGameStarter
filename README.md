@@ -10,6 +10,23 @@ Sample Features
 - Ragdoll Death Simulator Actor Component for peoples who are lazy to make death animation
 - Advanced Object Interaction System
 
+Requirement
+- Before opening the project, make sure you have:
+	- Unreal Engine 5.7 installed
+	- A C++ development environment configured for Unreal Engine
+		- Visual Studio 2022 (Windows)
+		- Xcode (macOS)
+Installation
+- Download/clone this project
+- Open file manager to locate this project
+- Right click the .uproject file, select "Generate Visual Studio project files" (Windows) or equivalent project generation for your platform, wait until the generation is finished
+- Open the project, and the engine may ask you to build, choose Yes
+- Once the build is complete, the project will launch automatically
+
+Note
+- This project uses both blueprint and C++, therefore you must generate project file before opening the project for the first time
+- Recommended for users already familiar with advanced Blueprint workflows
+
 License & Credits
 - Programming
 	- Copyright(c) 2026 Nibour16
