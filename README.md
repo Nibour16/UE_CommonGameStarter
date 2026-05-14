@@ -18,7 +18,7 @@ A starter for advanced 3D video games in Unreal Engine, mainly for experienced b
 | Starting Player BP | Ready-to-use advanced player blueprint |
 | Blueprintable Subsystem | Create subsystems without C++ |
 | State Pattern | State Controllers inherited by various base classes (e.g. Actor Component, Game State) |
-| Function Libraries | Utility functions and macros |
+| Blueprint Libraries | Utility functions and macros |
 
 ## 🎮 Sample Features
 
@@ -26,6 +26,7 @@ A starter for advanced 3D video games in Unreal Engine, mainly for experienced b
 |---|---|
 | Ragdoll Death Simulator | Ragdoll death effects without needing of animations |
 | Advanced Object Interaction System | Flexible interaction between gameplay objects in the game world |
+| Advanced AI System | A smart, developable AI system that aloows to have various detection layers and senses |
 
 ---
 
