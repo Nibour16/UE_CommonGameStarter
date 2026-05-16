@@ -36,8 +36,4 @@ public:
 		meta = (WorldContext = "WorldContextObject", DeterminesOutputType = "Class"))
 	static UBlueprintablePlayerSubsystem* GetBlueprintablePlayerSubsystem(
 		ULocalPlayer* LocalPlayer, TSubclassOf<UBlueprintablePlayerSubsystem> Class);
-
-	// Helper Functions
-private:
-	static UWorld* GetWorld(UObject* WorldContextObject);
 };
