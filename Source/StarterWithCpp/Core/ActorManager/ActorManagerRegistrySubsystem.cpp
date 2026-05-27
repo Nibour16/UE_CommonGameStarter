@@ -7,7 +7,7 @@ AActorManagerBase* UActorManagerRegistrySubsystem::GetManagerByClass(TSubclassOf
     for (AActorManagerBase* Manager : RegisteredManagers)
     {
         if (IsValid(Manager) && Manager->IsA(Class))
-            return Manager;
+            return Cast<AActorManagerBase>(Manager);
     }
 
     return nullptr;

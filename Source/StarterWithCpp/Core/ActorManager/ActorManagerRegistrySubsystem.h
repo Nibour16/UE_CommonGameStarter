@@ -26,7 +26,7 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "Actor Manager")
 	TArray<TObjectPtr<AActorManagerBase>> RegisteredManagers;
 
-	UFUNCTION(BlueprintPure, Category = "Actor Manager")
+	UFUNCTION(BlueprintPure, Category = "Actor Manager", meta = (DeterminesOutputType = "Class"))
 	AActorManagerBase* GetManagerByClass(TSubclassOf<AActorManagerBase> Class);
 	
 	UFUNCTION(BlueprintCallable, Category = "Manager Registration")
