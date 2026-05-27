@@ -6,7 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "ActorManagerBase.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable, BlueprintType, Abstract)
 class STARTERWITHCPP_API AActorManagerBase : public AActor
 {
 	GENERATED_BODY()
@@ -14,13 +14,21 @@ class STARTERWITHCPP_API AActorManagerBase : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AActorManagerBase();
+	
+	UFUNCTION(BlueprintImplementableEvent, Category = "Manager Registration")
+	void OnRegistered();
+
+	UFUNCTION(BlueprintNativeEvent, Category = "Manager Registration")
+	void OnUnregistered();
+	void OnUnregistered_Implementation();
+
+	UFUNCTION(BlueprintNativeEvent, Category = "Manager Registration")
+	void OnRegistrationFailed();
 
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	UPROPERTY(EditAnywhere, Category = "General Setting")
+	bool bDestroyIfDuplicated = true;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
+	UPROPERTY(EditAnywhere, Category = "General Setting")
+	bool bDestroyIfUnregistered = true;
 };

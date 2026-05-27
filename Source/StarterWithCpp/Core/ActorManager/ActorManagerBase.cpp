@@ -1,6 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "ActorManagerBase.h"
 
 // Sets default values
@@ -11,17 +8,14 @@ AActorManagerBase::AActorManagerBase()
 
 }
 
-// Called when the game starts or when spawned
-void AActorManagerBase::BeginPlay()
+void AActorManagerBase::OnUnregistered_Implementation()
 {
-	Super::BeginPlay();
-	
+	if (bDestroyIfUnregistered)
+		Destroy();
 }
 
-// Called every frame
-void AActorManagerBase::Tick(float DeltaTime)
+void AActorManagerBase::OnRegistrationFailed_Implementation()
 {
-	Super::Tick(DeltaTime);
-
+	if (bDestroyIfDuplicated)
+		Destroy();
 }
-
