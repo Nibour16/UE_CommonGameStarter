@@ -8,13 +8,13 @@ AActorManagerBase::AActorManagerBase()
 
 }
 
-void AActorManagerBase::OnUnregistered_Implementation()
+void AActorManagerBase::OnUnregistered_Implementation(UObject* Registrar)
 {
 	if (bDestroyIfUnregistered)
 		Destroy();
 }
 
-void AActorManagerBase::OnRegistrationFailed_Implementation()
+void AActorManagerBase::OnRegistrationFailed_Implementation(UObject* Registrar)
 {
 	if (bDestroyIfDuplicated)
 		Destroy();
