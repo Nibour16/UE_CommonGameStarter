@@ -25,7 +25,7 @@ protected:
 	TArray<TObjectPtr<UObject>> RegisteredItems;
 
 	// Registrable Interface Resolve
-	IRegistrableItem* GetRegistrableItem(UObject* Item) const;
+	bool IsRegistrableItem(UObject* Item) const;
 
 	// Life Cycle
 	virtual void Deinitialize() override;

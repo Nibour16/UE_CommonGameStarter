@@ -2,12 +2,12 @@
 #include <Kismet/GameplayStatics.h>
 #include "RegistrableItem.h"
 
-IRegistrableItem* UBaseRegistrySubsystem::GetRegistrableItem(UObject* Item) const
+bool UBaseRegistrySubsystem::IsRegistrableItem(UObject* Item) const
 {
     if (Item && Item->Implements<URegistrableItem>())
-        return Cast<IRegistrableItem>(Item);
+        return true;
 
-    return nullptr;
+    return false;
 }
 
 void UBaseRegistrySubsystem::Deinitialize()
@@ -60,18 +60,16 @@ void UBaseRegistrySubsystem::RegisterItem(UObject* Item)
 {
     ERegistryResult Result = Register_Internal(Item);
 
-    IRegistrableItem* RegistrableItem = GetRegistrableItem(Item);
-
     switch (Result)
     {
     case ERegistryResult::Success:
-        if (RegistrableItem)
-            RegistrableItem->OnRegistered(this);
+        if (IsRegistrableItem(Item))
+            IRegistrableItem::Execute_OnRegistered(Item, this);
         break;
 
     case ERegistryResult::DuplicateClass:
-        if (RegistrableItem)
-            RegistrableItem->OnRegistrationFailed(this);
+        if (IsRegistrableItem(Item))
+            IRegistrableItem::Execute_OnRegistrationFailed(Item, this);
         break;
 
     case ERegistryResult::AlreadyRegistered:
@@ -79,8 +77,8 @@ void UBaseRegistrySubsystem::RegisterItem(UObject* Item)
 
     case ERegistryResult::Invalid:
         UE_LOG(LogTemp, Warning, TEXT("Registry: Invalid Manager passed in, now it is removed"));
-        if (RegistrableItem)
-            RegistrableItem->OnRegistrationFailed(this);
+        if (IsRegistrableItem(Item))
+            IRegistrableItem::Execute_OnRegistrationFailed(Item, this);
         break;
 
     default:
@@ -108,11 +106,9 @@ void UBaseRegistrySubsystem::RegisterAllItemsInWorld(TSubclassOf<AActor> Desired
 void UBaseRegistrySubsystem::UnregisterItem(UObject* Item)
 {
     if (!IsValid(Item)) return;
-
-    IRegistrableItem* RegistrableItem = GetRegistrableItem(Item);
     
-    if (RegistrableItem)
-        RegistrableItem->OnUnregistered(Item);
+    if (IsRegistrableItem(Item))
+        IRegistrableItem::Execute_OnUnregistered(Item, this);
 
     RegisteredItems.Remove(Item);
 }
