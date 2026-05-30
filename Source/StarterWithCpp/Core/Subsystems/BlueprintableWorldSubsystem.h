@@ -4,6 +4,8 @@
 #include "Subsystems/WorldSubsystem.h"
 #include "BlueprintableWorldSubsystem.generated.h"
 
+#define WORLD_SUBSYSTEM_CATEGORY "World Subsystem"
+
 UCLASS(Abstract, Blueprintable)
 class STARTERWITHCPP_API UBlueprintableWorldSubsystem : public UWorldSubsystem
 {
@@ -16,13 +18,13 @@ public:
 protected:
 	UFUNCTION(
 		BlueprintImplementableEvent,
-		Category = GI_SUBSYSTEM_CATEGORY,
+		Category = WORLD_SUBSYSTEM_CATEGORY,
 		meta = (DisplayName = "Initialize"))
 	void OnInitialize();
 
 	UFUNCTION(
 		BlueprintImplementableEvent,
-		Category = GI_SUBSYSTEM_CATEGORY,
+		Category = WORLD_SUBSYSTEM_CATEGORY,
 		meta = (DisplayName = "Deinitialize"))
 	void OnDeinitialize();
 

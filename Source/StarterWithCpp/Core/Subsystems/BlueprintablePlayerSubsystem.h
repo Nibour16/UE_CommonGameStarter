@@ -4,6 +4,8 @@
 #include "Subsystems/LocalPlayerSubsystem.h"
 #include "BlueprintablePlayerSubsystem.generated.h"
 
+#define PLAYER_SUBSYSTEM_CATEGORY "Local Player Subsystem"
+
 UCLASS(Abstract, Blueprintable)
 class STARTERWITHCPP_API UBlueprintablePlayerSubsystem : public ULocalPlayerSubsystem
 {
@@ -17,13 +19,13 @@ protected:
 	// Life Cycle
 	UFUNCTION(
 		BlueprintImplementableEvent,
-		Category = GI_SUBSYSTEM_CATEGORY,
+		Category = PLAYER_SUBSYSTEM_CATEGORY,
 		meta = (DisplayName = "Initialize"))
 	void OnInitialize();
 
 	UFUNCTION(
 		BlueprintImplementableEvent,
-		Category = GI_SUBSYSTEM_CATEGORY,
+		Category = PLAYER_SUBSYSTEM_CATEGORY,
 		meta = (DisplayName = "Deinitialize"))
 	void OnDeinitialize();
 
