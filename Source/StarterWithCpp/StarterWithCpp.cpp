@@ -8,6 +8,7 @@
 
 void FStarterWithCppModule::StartupModule()
 {
+#if WITH_EDITOR
     IAssetRegistry& Registry = GetAssetRegistry();
     
     if (Registry.IsLoadingAssets())
@@ -18,6 +19,7 @@ void FStarterWithCppModule::StartupModule()
     {
         PreloadBlueprintClasses();
     }
+#endif
 }
 
 IMPLEMENT_PRIMARY_GAME_MODULE( FStarterWithCppModule, StarterWithCpp, "StarterWithCpp" );
@@ -33,7 +35,7 @@ IAssetRegistry& FStarterWithCppModule::GetAssetRegistry() const
 TArray<FAssetData> FStarterWithCppModule::ResolveAssetsFromRegistry() const
 {
     FARFilter Filter;
-    Filter.PackagePaths.Add("/Game");
+    Filter.PackagePaths.Add("/Game/Blueprints");
     Filter.bRecursivePaths = true;
 
     TArray<FAssetData> Assets;
