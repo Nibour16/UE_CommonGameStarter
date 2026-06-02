@@ -1,96 +1,94 @@
 #include "StarterWithCpp.h"
 
-#include "AssetRegistry/AssetRegistryModule.h"
-#include "AssetRegistry/IAssetRegistry.h"
-#include "Engine/Blueprint.h"
-#include "UObject/UObjectGlobals.h"
-#include "UObject/Class.h"
+#include "GameStarterSetting.h"
+#include "StarterBlueprintPreloadConfig.h"
+#include "GameStarterAssetTypes.h"
+
+#include "Engine/AssetManager.h"
+#include "Engine/StreamableManager.h"
+
+#define LOCTEXT_NAMESPACE "FStarterWithCppModule"
 
 void FStarterWithCppModule::StartupModule()
 {
-#if WITH_EDITOR
-    IAssetRegistry& Registry = GetAssetRegistry();
-    
-    if (Registry.IsLoadingAssets())
-    {
-        Registry.OnFilesLoaded().AddRaw(this, &FStarterWithCppModule::PreloadBlueprintClasses);
-    }
-    else
-    {
-        PreloadBlueprintClasses();
-    }
-#endif
+    UAssetManager::CallOrRegister_OnCompletedInitialScan(
+        FSimpleMulticastDelegate::FDelegate::CreateRaw(
+            this, &FStarterWithCppModule::OnAssetManagerReady));
 }
 
-IMPLEMENT_PRIMARY_GAME_MODULE( FStarterWithCppModule, StarterWithCpp, "StarterWithCpp" );
+void FStarterWithCppModule::OnAssetManagerReady()
+{   
+    UAssetManager& AssetManager = UAssetManager::Get();
 
-IAssetRegistry& FStarterWithCppModule::GetAssetRegistry() const
-{
-    static IAssetRegistry& Registry =
-        FModuleManager::LoadModuleChecked<FAssetRegistryModule>("AssetRegistry").Get();
+    // Ensure Asset Manager is initialized
+    AssetManager.StartInitialLoading();
 
-    return Registry;
+    PreloadBlueprintClasses(AssetManager);
 }
 
-TArray<FAssetData> FStarterWithCppModule::ResolveAssetsFromRegistry() const
-{
-    FARFilter Filter;
-    Filter.PackagePaths.Add("/Game/Blueprints");
-    Filter.bRecursivePaths = true;
-
-    TArray<FAssetData> Assets;
-    GetAssetRegistry().GetAssets(Filter, Assets);
-
-    UE_LOG(LogTemp, Log, TEXT("[BlueprintBootstrap] Found Assets = %d"), Assets.Num());
-
-    return Assets;
-}
-
-void FStarterWithCppModule::PreloadBlueprintClasses()
+void FStarterWithCppModule::PreloadBlueprintClasses(UAssetManager& AssetManager)
 {
     UE_LOG(LogTemp, Log, TEXT("[BlueprintBootstrap] Start Blueprint Warmup"));
 
-    TArray<FAssetData> Assets = ResolveAssetsFromRegistry();
-    TArray<UClass*> WarmedClasses;
+    const UGameStarterSetting* Settings = GetDefault<UGameStarterSetting>();
 
-    for (const FAssetData& Asset : Assets)
+    const FPrimaryAssetId ConfigId(
+        GameStarterAssetTypes::PreloadConfig, Settings->BlueprintPreloadConfigName);
+
+    if (!ConfigId.IsValid())
     {
-        // Blueprint Class Only
-        if (!Asset.TagsAndValues.Contains("GeneratedClass")) continue;
-
-        FString ClassPath;
-        if (!Asset.GetTagValue("GeneratedClass", ClassPath)) continue;
-
-        // Soft Class Load
-        UClass* Class = LoadObject<UClass>(nullptr, *ClassPath);
-
-        // Ensure this class is preloadable
-        if (!IsPreloadableClass(Class, true)) continue;
-
-        // Only desired targets for CDO warmup
-        const UObject* CDO = Class->GetDefaultObject();
-        WarmedClasses.AddUnique(Class);
-
-        // Print Warmed Classes
-        UE_LOG(LogTemp, Log, TEXT("[BlueprintBootstrap] Warmed: %s"), *Class->GetName());
+        UE_LOG(LogTemp, Error, TEXT("[BlueprintBootstrap] Invalid ConfigId"));
+        return;
     }
 
-    // Print Numbers for warmed classes
-    UE_LOG(LogTemp, Log, TEXT("[BlueprintBootstrap] Total Warmed Classes: %d"), WarmedClasses.Num());
-}
+    TSharedPtr<FStreamableHandle> Handle = AssetManager.LoadPrimaryAsset(ConfigId);
 
-bool FStarterWithCppModule::IsPreloadableClass(UClass* Class, bool IncludeBaseClass = true) const
-{
-    if (!Class) return false;
-
-    for (UClass* BaseClass : PreparedPreloadClasses)
+    if (!Handle.IsValid())
     {
-        if (!BaseClass) continue;
-
-        if (Class == BaseClass && IncludeBaseClass) return true;
-        
-        if (Class->IsChildOf(BaseClass)) return true;
+        UE_LOG(LogTemp, Error, TEXT("[BlueprintBootstrap] LoadPrimaryAsset failed"));
+        return;
     }
 
-    return false;
+    Handle->WaitUntilComplete();
+
+    UObject* Obj = Handle.IsValid() ? Handle->GetLoadedAsset() : nullptr;
+
+    if (!Obj)
+    {
+        UE_LOG(LogTemp, Error, TEXT("[BlueprintBootstrap] PrimaryAsset loaded but object is NULL"));
+        return;
+    }
+
+    UStarterBlueprintPreloadConfig* Config = Cast<UStarterBlueprintPreloadConfig>(Obj);
+
+    if (!Config)
+    {
+        UE_LOG(LogTemp, Error, TEXT("[BlueprintBootstrap] Failed to load preload config"));
+        return;
+    }
+
+    UE_LOG(LogTemp, Log, TEXT("[BlueprintBootstrap] Classes Count = %d"), Config->ClassesToPreload.Num());
+
+    // Config Data is gotten, preload classes from data
+    for (const TSoftClassPtr<UObject>& SoftClass : Config->ClassesToPreload)
+    {
+        UClass* LoadedClass = SoftClass.LoadSynchronous();
+
+        if (!LoadedClass)
+        {
+            UE_LOG(LogTemp, Warning, TEXT("[BlueprintBootstrap] Failed to load class %s"),
+                *SoftClass.ToSoftObjectPath().ToString());
+
+            continue;
+        }
+
+        LoadedClass->GetDefaultObject();
+
+        UE_LOG(LogTemp, Log,
+            TEXT("[BlueprintBootstrap] Preloaded %s"), *LoadedClass->GetName());
+    }
 }
+
+#undef LOCTEXT_NAMESPACE
+
+IMPLEMENT_PRIMARY_GAME_MODULE(FStarterWithCppModule, StarterWithCpp, "StarterWithCpp");
