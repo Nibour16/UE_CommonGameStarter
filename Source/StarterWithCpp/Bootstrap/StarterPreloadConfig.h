@@ -13,4 +13,9 @@ class STARTERWITHCPP_API UStarterPreloadConfig : public UDataAsset
 public:
 	UPROPERTY(EditAnywhere, Category = "Startup | Asset Bootstrap")
 	TArray<TSoftClassPtr<UObject>> ClassesToPreload;
+
+protected:
+#if WITH_EDITOR
+	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
+#endif
 };

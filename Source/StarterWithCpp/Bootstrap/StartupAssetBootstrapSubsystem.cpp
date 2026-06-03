@@ -29,6 +29,8 @@ void UStartupAssetBootstrapSubsystem::HandleBootstrap()
     // Config Data is gotten, preload classes from data
     for (const TSoftClassPtr<UObject>& SoftClass : Config->ClassesToPreload)
     {
+        if (SoftClass.IsNull()) continue;
+        
         UClass* LoadedClass = SoftClass.LoadSynchronous();
 
         if (!LoadedClass)
