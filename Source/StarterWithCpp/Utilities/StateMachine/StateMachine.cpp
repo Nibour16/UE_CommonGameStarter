@@ -20,13 +20,20 @@ void UStateMachine::Tick(float DeltaTime)
 
 void UStateMachine::SetState(TSubclassOf<UBaseState> NewStateClass)
 {
-	if (!StateData.Contains(NewStateClass)) return;
+	if (!StateData.Contains(NewStateClass)) 
+	{ 
+		UE_LOG(LogTemp, Error, TEXT("[State Machine] Class is not found in the State Data: %s"), 
+			*Owner->GetName());
+		return; 
+	}
 
 	UBaseState* NewState = StateData[NewStateClass];
 
 	if (bIsSwitchingState)
 	{
 		PendingState = NewState;
+		
+		UE_LOG(LogTemp, Warning, TEXT("[State Machine] State is still Switching: %s"), *Owner->GetName());
 		return;
 	}
 
