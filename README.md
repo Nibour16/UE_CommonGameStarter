@@ -11,15 +11,6 @@ A starter for advanced 3D video games in Unreal Engine, mainly for experienced b
 
 ---
 
-## ✨ Game Development Features
-
-| Feature | Description |
-|---|---|
-| Blueprintable Subsystem | Create subsystems by blueprint only |
-| State Pattern | State Controllers inherited by various base classes (e.g. Actor Component, Game State) |
-| Startup Assets Preload System | Preload Startup Blueprint Assets that can be used for editor (e.g. Blueprintable Subsystems)|
-| Starting Blueprint Libraries | Started with Utility functions and macros made in Blueprint |
-
 ## 🎮 Gameplay Features
 
 | Feature | Description |
@@ -30,6 +21,20 @@ A starter for advanced 3D video games in Unreal Engine, mainly for experienced b
 | Advanced Object Interaction System | Flexible interaction between gameplay objects in the game world |
 | Advanced AI System | A smart, developable AI system that aloows to have various detection layers and senses |
 | Starting Modular Widget System | Developable Starting UI System for Unreal Widgets |
+
+## 🛠️ Framework Features
+
+| Feature | Description |
+|---|---|
+| Blueprintable Subsystem | Create subsystems by blueprint only |
+| State Pattern | State Controllers inherited by various base classes (e.g. Actor Component, Game State) |
+| Starting Blueprint Libraries | Started with Utility functions and macros made in Blueprint |
+
+## ⚙️ Core System Features
+
+| Feature | Description |
+|---|---|
+| Startup Assets Preload System | Preload Startup Blueprint Assets that can be used for editor (e.g. Blueprintable Subsystems)|
 
 ---
 
