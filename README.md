@@ -15,7 +15,7 @@ A starter for advanced 3D video games in Unreal Engine, mainly for experienced b
 
 | Feature | Description |
 |---|---|
-| Loading Systems | Systems that can load primary assets and sub-levels |
+| Gameplay Loading Systems | Systems that can load gameplay primary assets and sub-levels |
 | Starting Player BP | Ready-to-use Advanced Player Blueprint |
 | Ragdoll Death Simulator | Ragdoll death effects without needing of animations |
 | Advanced Object Interaction System | Flexible interaction between gameplay objects in the game world |
