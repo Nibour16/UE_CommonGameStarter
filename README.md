@@ -11,22 +11,25 @@ A starter for advanced 3D video games in Unreal Engine, mainly for experienced b
 
 ---
 
-## ✨ Features
+## ✨ Game Development Features
 
 | Feature | Description |
 |---|---|
-| Starting Player BP | Ready-to-use advanced player blueprint |
-| Blueprintable Subsystem | Create subsystems without C++ |
+| Blueprintable Subsystem | Create subsystems by blueprint only |
 | State Pattern | State Controllers inherited by various base classes (e.g. Actor Component, Game State) |
+| Startup Assets Preload System | Preload Startup Blueprint Assets that can be used for editor (e.g. Blueprintable Subsystems)|
 | Blueprint Libraries | Utility functions and macros |
 
-## 🎮 Sample Features
+## 🎮 Gameplay Features
 
 | Feature | Description |
 |---|---|
+| Loading Systems | Systems that can load primary assets and sub-levels |
+| Starting Player BP | Ready-to-use Advanced Player Blueprint |
 | Ragdoll Death Simulator | Ragdoll death effects without needing of animations |
 | Advanced Object Interaction System | Flexible interaction between gameplay objects in the game world |
 | Advanced AI System | A smart, developable AI system that aloows to have various detection layers and senses |
+| Starting Modular Widget System | Developable Starting UI System for Unreal Widgets |
 
 ---
 
@@ -64,7 +67,7 @@ Before opening the project, make sure you have:
 > therefore you must generate project file before opening the project for the first time.
 
 > [!NOTE]
-> Recommended for users already familiar with advanced Blueprint workflows.
+> Recommended for users already familiar with Unreal Engine 4 or 5 Blueprint workflows.
 
 ---
 
