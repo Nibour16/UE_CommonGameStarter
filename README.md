@@ -104,3 +104,11 @@ License under the GNU General Public License v3.0
 ## Game Engine
 
 - Unreal Engine 5.7
+
+---
+
+## Acknowledgements
+
+This project was developed with assistance from various learning resources. 
+
+Including ChatGPT (OpenAI) for development assistance, documentation support, technical discussions, and code references.
