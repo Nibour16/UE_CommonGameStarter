@@ -30,7 +30,7 @@ A starter for advanced 3D video games in Unreal Engine, mainly for experienced b
 | State Pattern | State Controllers inherited by various base classes (e.g. Actor Component, Game State) |
 | Starting Blueprint Libraries | Started with Utility functions and macros made in Blueprint |
 
-## ⚙️ Core System Features
+## ⚙️ Engine System Features
 
 | Feature | Description |
 |---|---|
