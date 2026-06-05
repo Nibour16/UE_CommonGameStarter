@@ -18,7 +18,7 @@ A starter for advanced 3D video games in Unreal Engine, mainly for experienced b
 | Blueprintable Subsystem | Create subsystems by blueprint only |
 | State Pattern | State Controllers inherited by various base classes (e.g. Actor Component, Game State) |
 | Startup Assets Preload System | Preload Startup Blueprint Assets that can be used for editor (e.g. Blueprintable Subsystems)|
-| Blueprint Libraries | Utility functions and macros |
+| Starting Blueprint Libraries | Started with Utility functions and macros made in Blueprint |
 
 ## 🎮 Gameplay Features
 
