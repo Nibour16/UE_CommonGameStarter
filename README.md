@@ -83,11 +83,11 @@ Before opening the project, make sure you have:
 
 # 🤝 Contributing
 
-Contributions, suggestions, and improvements are welcome.
+- Contributions, suggestions, and improvements are welcome.
 
-Please fork the repository and submit a pull request for review.
+- Please fork the repository and submit a pull request for review.
 
-Only repository maintainers and approved contributors can directly modify the main repository.
+- Only repository maintainers and approved contributors can directly modify the main repository.
 
 ---
 
@@ -95,9 +95,9 @@ Only repository maintainers and approved contributors can directly modify the ma
 
 ## Programming
 
-Copyright(c) 2026 Nibour16
+- Copyright(c) 2026 Nibour16
 
-License under the GNU General Public License v3.0
+- License under the GNU General Public License v3.0
 
 ---
 
@@ -109,6 +109,6 @@ License under the GNU General Public License v3.0
 
 ## Acknowledgements
 
-This project was developed with assistance from various learning resources. 
+- This project was developed with assistance from various learning resources. 
 
-Including ChatGPT (OpenAI) for development assistance, documentation support, technical discussions, and code references.
+- Including ChatGPT (OpenAI) for development assistance, documentation support, technical discussions, and code references.
