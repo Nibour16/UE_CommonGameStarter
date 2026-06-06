@@ -69,7 +69,6 @@ Before opening the project, make sure you have:
 
 > [!IMPORTANT]
 > This project uses both blueprint and C++,
-> 
 > therefore you must generate project file before opening the project for the first time.
 
 > [!NOTE]
