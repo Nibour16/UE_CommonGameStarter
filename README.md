@@ -74,8 +74,6 @@ Before opening the project, make sure you have:
 > [!NOTE]
 > This project is currently developed and tested with Unreal Engine 5.7.
 
-> This project was developed and tested with Unreal Engine 5.7.
-
 > Other Unreal Engine 5 versions may work, but have not been thoroughly tested. Compatibility  of early Unreal Engine versions like Unreal Engine 3 or 4 are unknown.
 
 > Recommended for users already familiar with Unreal Engine 4 or 5 Blueprint workflows. Knowledge of Unreal C++ is also beneficial.
