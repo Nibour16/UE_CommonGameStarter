@@ -26,7 +26,7 @@ A starter for advanced 3D video games in Unreal Engine, mainly for experienced b
 
 | Feature | Description |
 |---|---|
-| Blueprintable Subsystem | Create subsystems by blueprint only |
+| Blueprintable Subsystem | Users can create subsystems only by Blueprint, without need of C++ |
 | State Pattern | State Controllers inherited by various base classes (e.g. Actor Component, Game State) |
 | Starting Blueprint Libraries | Started with Utility functions and macros made in Blueprint |
 
@@ -45,7 +45,13 @@ A starter for advanced 3D video games in Unreal Engine, mainly for experienced b
 Before opening the project, make sure you have:
 
 - Unreal Engine installed (tested with 5.7)
-- Visual Studio 2022 for C++ development
+- Microsoft C++ Build Tools (MSVC v143 or compatible)
+- Windows SDK 10/11
+
+## 💻 Recommended IDE
+
+- Visual Studio 2022
+- JetBrains Rider
 
 ---
 
@@ -68,17 +74,18 @@ Before opening the project, make sure you have:
 # 📝 Notes
 
 > [!IMPORTANT]
-> This project uses both blueprint and C++,
-> therefore you must generate project file before opening the project for the first time.
+> This project uses both Unreal Engine Blueprint and C++.
+> 
+> Therefore, you must generate project file before opening the project for the first time.
 
 > [!NOTE]
 > This project is currently developed and tested with Unreal Engine 5.7.
 > 
 > Other Unreal Engine 5 versions may work, but have not been thoroughly tested.
 > 
-> Compatibility  of early Unreal Engine versions like Unreal Engine 3 or 4 are unknown.
+> Compatibility of early Unreal Engine versions like Unreal Engine 3 or 4 are unknown.
 > 
-> Recommended for users already familiar with Unreal Engine 4 or 5 Blueprint workflows. Knowledge of Unreal C++ is also beneficial.
+> Recommended for users already familiar with Unreal Engine 4 or 5 Blueprint workflows. Knowledge of Unreal Engine C++ is also beneficial.
 
 ---
 
