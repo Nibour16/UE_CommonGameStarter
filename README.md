@@ -72,7 +72,8 @@ Before opening the project, make sure you have:
 > therefore you must generate project file before opening the project for the first time.
 
 > [!NOTE]
-> Recommended for users already familiar with Unreal Engine 4 or 5 Blueprint workflows.
+> Recommended for users already familiar with Unreal Engine 4 or 5 Blueprint workflows, but also welcome if you also know C++.
+> Recommended version for Unreal Engine 5.7
 
 ---
 
