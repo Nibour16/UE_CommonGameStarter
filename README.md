@@ -61,7 +61,9 @@ Before opening the project, make sure you have:
 
 2. Open file manager to locate this project.
 
-3. Right click the .uproject file, select: **Generate Visual Studio project files**
+3. Right click the .uproject file, select: **Generate Visual Studio project files**.
+  
+   (If this option is missing, see the resources section below)
 
 4. Wait until the generation is finished.
 
@@ -96,6 +98,35 @@ Before opening the project, make sure you have:
 - State pattern implementation
 - Blueprintable subsystem architecture
 - Reusable gameplay libraries
+
+---
+
+# 📚 Resources
+
+## Unreal Engine
+
+- Unreal Engine Documentation  
+  https://dev.epicgames.com/documentation/en-us/unreal-engine/
+
+- Blueprint Visual Scripting  
+  https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprints-visual-scripting-in-unreal-engine
+
+- Gameplay Framework Overview  
+  https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-framework-in-unreal-engine
+
+- Setting Up Visual Studio for Unreal Engine  
+  https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine
+
+- Programming with C++  
+  https://dev.epicgames.com/documentation/en-us/unreal-engine/programming-with-cplusplus-in-unreal-engine
+
+## Microsoft
+
+- Visual Studio Download  
+  https://visualstudio.microsoft.com/downloads/
+
+- C++ Development Tools Installation Guide  
+  https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation
 
 ---
 
