@@ -4,7 +4,7 @@
 ![License](https://img.shields.io/badge/License-GPLv3-blue)
 ![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey)
 
-A starter for advanced 3D video games in Unreal Engine, mainly for experienced blueprint users
+A modular Unreal Engine starter framework for advanced Blueprint-first 3D game development.
 
 > [!WARNING]
 > This framework is currently in active development and is not considered production-ready yet.
