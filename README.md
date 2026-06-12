@@ -27,6 +27,7 @@ A modular Unreal Engine starter framework for advanced Blueprint-first 3D game d
 | Feature | Description |
 |---|---|
 | Blueprintable Subsystem | Users can create subsystems only by Blueprint, without need of C++ |
+| Actor Manager Registry Subsystem | Users can create actor type manager that other blueprint classes do not require Get Actor of Class to get the manager (Performance saving) |
 | State Pattern | State Controllers inherited by various base classes (e.g. Actor Component, Game State) |
 | Starting Blueprint Libraries | Started with Utility functions and macros made in Blueprint |
 
