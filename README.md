@@ -45,13 +45,13 @@ A modular Unreal Engine starter framework for advanced Blueprint-first 3D game d
 
 Before opening the project, make sure you have:
 
-- Unreal Engine installed (tested with 5.7)
+- Unreal Engine installed (tested with 5.7 at beginning then 5.8)
 - Microsoft C++ Build Tools (MSVC v143 or compatible)
 - Windows SDK 10/11
 
 ## 💻 Recommended IDE
 
-- Visual Studio 2022
+- Visual Studio - 2022 for 5.7 or older, 2026 for 5.8 or newer (if possible)
 - JetBrains Rider
 
 ---
